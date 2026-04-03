@@ -1,0 +1,25 @@
+class Fighter:
+    def __init__(self, name, damage, hp):
+        self.name = name
+        self.damage = damage
+        self.hp = hp
+
+    def attack(self, target):
+        print(f'fighter {self.name} attacks {target.name}')
+        target.hp -= self.damage
+
+    def __str__(self) -> str:
+        return f'Name: {self.name}\n\tDamage: {self.damage}\n\tHealth: {self.hp}'
+
+class Healer:
+    def __init__(self, name, heal_amount, hp):
+        self.name = name
+        self.heal_amount = heal_amount
+        self.hp = hp
+
+    def heal(self, target):
+        print(f'Healer {self.name} attacks {target.name}')
+        target.hp += self.heal_amount
+
+    def __str__(self) -> str:
+        return f'Name: {self.name}\n\tHeal amount: {self.heal_amount}\n\tHealth: {self.hp}'
